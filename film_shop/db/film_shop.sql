@@ -11,6 +11,7 @@ CREATE TABLE films
 (
   id SERIAL8 PRIMARY KEY,
   title VARCHAR(255),
+  director VARCHAR(255),
   quantity INT8,
   buy_cost INT8,
   sell_price INT8,
