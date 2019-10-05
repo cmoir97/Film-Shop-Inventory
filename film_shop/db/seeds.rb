@@ -7,6 +7,7 @@ production_company1 = ProductionCompany.new('name' => 'Criterion')
 production_company2 = ProductionCompany.new('name' => 'A24')
 
 production_company1.save()
+production_company2.save()
 
 
 film1 = Film.new({'title' => 'There Will be Blood', 'director' => 'Paul Thomas Anderson', 'quantity' => 10, 'sell_price' => 1000, 'production_company_id' => production_company1.id()})

@@ -60,4 +60,13 @@ class Film
     return film_hashes
   end
 
+  def self.find(id)
+  sql = "SELECT * FROM films
+  WHERE id = $1"
+  values = [id]
+  result = SqlRunner.run(sql, values).first
+  film = Film.new(result)
+  return film
+  end
+
 end
