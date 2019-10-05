@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Film
 
-  attr_accessor :title, :director, :quantity, :buy_cost, :sell_price, :production_company_id
+  attr_accessor :title, :director, :quantity, :purchase_cost, :sell_price, :production_company_id
   attr_reader :id
 
   def initialize(options)
@@ -10,6 +10,7 @@ class Film
     @title = options['title']
     @director = options['director']
     @quantity = options['quantity'].to_i
+    @purchase_cost = options['purchase_cost']
     @sell_price = options['sell_price'].to_i
     @production_company_id = options['production_company_id'].to_i
   end
@@ -20,13 +21,14 @@ class Film
       title,
       director,
       quantity,
+      purchase_cost,
       sell_price,
       production_company_id
       ) VALUES
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
         ) RETURNING id"
-        values = [@title, @director, @quantity, @sell_price, @production_company_id]
+        values = [@title, @director, @quantity, @purchase_cost, @sell_price, @production_company_id]
         result = SqlRunner.run(sql, values)
         @id = result.first['id']
   end
@@ -37,12 +39,13 @@ class Film
       title,
       director,
       quantity,
+      purchase_cost,
       sell_price,
       production_company_id
       ) = (
-        $1, $2, $3, $4, $5
-        ) WHERE id = $6"
-        values = [@title, @director, @quantity, @sell_price, @production_company_id, @id]
+        $1, $2, $3, $4, $5, $6
+        ) WHERE id = $7"
+        values = [@title, @director, @quantity, @purchase_cost, @sell_price, @production_company_id, @id]
         SqlRunner.run(sql, values)
   end
 
@@ -51,6 +54,14 @@ class Film
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def production_company()
+  sql = "SELECT * FROM production_companies
+  WHERE id = $1"
+  values = [@production_company_id]
+  results = SqlRunner.run( sql, values )
+  return ProductionCompany.new( results.first )
   end
 
   def self.all()

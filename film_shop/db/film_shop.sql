@@ -13,7 +13,7 @@ CREATE TABLE films
   title VARCHAR(255),
   director VARCHAR(255),
   quantity INT8,
-  buy_cost INT8,
+  purchase_cost INT8,
   sell_price INT8,
   production_company_id INT8
   REFERENCES production_companies(id)
