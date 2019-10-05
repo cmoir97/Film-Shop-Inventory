@@ -22,13 +22,28 @@ class Film
       quantity,
       sell_price,
       production_company_id
-    ) VALUES
+      ) VALUES
+      (
+        $1, $2, $3, $4, $5
+        ) RETURNING id"
+        values = [@title, @director, @quantity, @sell_price, @production_company_id]
+        result = SqlRunner.run(sql, values)
+        @id = result.first['id']
+  end
+
+  def update()
+    sql = "UPDATE films SET
     (
-      $1, $2, $3, $4, $5
-    ) RETURNING id"
-    values = [@title, @director, @quantity, @sell_price, @production_company_id]
-    result = SqlRunner.run(sql, values)
-    @id = result.first['id']
+      title,
+      director,
+      quantity,
+      sell_price,
+      production_company_id
+      ) = (
+        $1, $2, $3, $4, $5
+        ) WHERE id = $6"
+        values = [@title, @director, @quantity, @sell_price, @production_company_id, @id]
+        SqlRunner.run(sql, values)
   end
 
 
