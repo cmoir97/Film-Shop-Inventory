@@ -13,4 +13,21 @@ class Film
     @production_company_id = options['production_company_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO films
+    (
+      title,
+      quantity,
+      sell_price,
+      production_company_id
+    ) VALUES
+    (
+      $1, $2, $3, $4
+    ) RETURNING id"
+    values = [@title, @quantity, @sell_price, @production_company_id]
+    result = SqlRunner.run(sql, values)
+    @id = result.first['id']
+  end
+
+  
 end
