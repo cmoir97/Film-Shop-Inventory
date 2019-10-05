@@ -53,5 +53,11 @@ class Film
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM films"
+    hashes_of_films = SqlRunner.run(sql)
+    film_hashes = hashes_of_films.map { |film_hash| Film.new(film_hash) }
+    return film_hashes
+  end
 
 end

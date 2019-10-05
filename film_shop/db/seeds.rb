@@ -4,6 +4,7 @@ require_relative('../models/production_company')
 
 
 production_company1 = ProductionCompany.new('name' => 'Criterion')
+production_company2 = ProductionCompany.new('name' => 'A24')
 
 production_company1.save()
 

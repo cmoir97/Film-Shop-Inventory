@@ -15,5 +15,6 @@ CREATE TABLE films
   quantity INT8,
   buy_cost INT8,
   sell_price INT8,
-  production_company_id INT8 REFERENCES production_companies(id)
+  production_company_id INT8
+  REFERENCES production_companies(id)
 );
