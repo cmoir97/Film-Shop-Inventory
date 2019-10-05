@@ -33,4 +33,11 @@ class ProductionCompany
   #   SqlRunner.run(sql, values)
   # end
 
+  def self.all()
+    sql = "SELECT * FROM production_companies"
+    hashes_of_companies = SqlRunner.run(sql)
+    company_hashes = hashes_of_companies.map { |company_hash| ProductionCompany.new(company_hash) }
+    return company_hashes
+  end
+
 end
