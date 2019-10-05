@@ -26,12 +26,12 @@ class ProductionCompany
     SqlRunner.run(sql, values)
   end
 
-  # def delete()
-  #   sql = "DELETE FROM production_companies
-  #   WHERE id = $1"
-  #   values = [@id]
-  #   SqlRunner.run(sql, values)
-  # end
+  def delete()
+    sql = "DELETE FROM production_companies
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
   def self.all()
     sql = "SELECT * FROM production_companies"
