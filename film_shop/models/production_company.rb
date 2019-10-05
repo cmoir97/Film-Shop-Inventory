@@ -40,4 +40,13 @@ class ProductionCompany
     return company_hashes
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM production_companies
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    production_company = ProductionCompany.new(result)
+    return production_company
+  end
+
 end
