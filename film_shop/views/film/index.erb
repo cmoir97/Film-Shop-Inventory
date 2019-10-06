@@ -1,1 +1,16 @@
-<h1>HI</h1>
+<h2>Films</h2>
+
+<div id="film-wrapper">
+  <% @films.each do |film| %>
+
+  <div class="film">
+    <h3><a href="/films/<%= film.id %>"><%= film.title %></a></h3>
+    <p>Director: <%= film.director %></p>
+    <p>Quantity: <%= film.quantity %></p>
+    <p>Purchase Cost: <%= film.purchase_cost %></p>
+    <p>Sell Price: <%= film.sell_price %></p>
+    <p>Production Company: <%= film.production_company.name %></p>
+  </div>
+
+  <% end %>
+</div>

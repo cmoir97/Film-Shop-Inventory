@@ -19,3 +19,8 @@ post '/films' do
   Film.new(params).save
   redirect to '/films'
 end
+
+get '/films/:id' do
+  @film = Film.find(params['id'])
+  erb(:"film/show")
+end
