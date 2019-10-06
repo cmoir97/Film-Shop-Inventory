@@ -36,3 +36,9 @@ post '/films/:id' do
   film.update
   redirect to "/films/#{params['id']}"
 end
+
+post '/films/:id/delete' do
+  film = Film.find(params['id'])
+  film.delete
+  redirect to '/films'
+end

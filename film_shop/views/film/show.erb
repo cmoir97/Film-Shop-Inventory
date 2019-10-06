@@ -6,3 +6,5 @@
 <p>Sell Price: <%= @film.sell_price %></p>
 <p>Production Company: <%= @film.production_company.name %></p>
 <p>Film ID: <%= @film.id %></p>
+
+<form action="/films/<%= @film.id %>/delete" method="POST"><input type="submit" value="Delete Film"></form>
