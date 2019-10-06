@@ -24,3 +24,15 @@ get '/films/:id' do
   @film = Film.find(params['id'])
   erb(:"film/show")
 end
+
+get '/films/:id/edit' do
+  @production_companies = ProductionCompany.all
+  @film = Film.find(params['id'])
+  erb(:"film/edit")
+end
+
+post '/films/:id' do
+  film = Film.new(params)
+  film.update
+  redirect to "/films/#{params['id']}"
+end
