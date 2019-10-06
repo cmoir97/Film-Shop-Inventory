@@ -1,0 +1,44 @@
+<h2>Add A New Film</h2>
+<form method="POST" action="/films">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title"/>
+    </div>
+
+    <div class="form-el">
+      <label for="director">Director:</label>
+      <input type="text" name="director" id="director"/>
+    </div>
+
+    <div class="form-el">
+      <label for="quantity">Quantity:</label>
+      <input type="number" name="quantity" id="quantity"/>
+    </div>
+
+    <div class="form-el">
+      <label for="purchase_cost">Purchase Cost:</label>
+      <input type="number" name="purchase_cost" id="purchase_cost"/>
+    </div>
+
+    <div class="form-el">
+      <label for="sell_price">Sell Price:</label>
+      <input type="number" name="sell_price" id="sell_price"/>
+    </div>
+
+    <div class="form-el">
+      <label for="production_company_select">Select Production Company:</label>
+      <select name="production_company_id" id="production_company_select">
+        <% @production_companies.each do |production_company| %>
+            <option value=<%= production_company.id %>><%= production_company.name %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Add Film to Stock"/>
+    </div>
+
+  </div>
+</form>
