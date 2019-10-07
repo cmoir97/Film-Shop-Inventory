@@ -2,5 +2,7 @@
 <br>
 <p>Production Company ID: <%= @production_company.id %></p>
 
+<p><a href="/production-company/<%= @production_company.id %>/films">View Films By This Company</a></p>
+
 <form  action="/production-company/<%= @production_company.id %>/delete" method="post"><input type="submit" value="Delete Production Company">
 </form>

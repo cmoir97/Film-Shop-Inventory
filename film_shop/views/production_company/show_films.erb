@@ -1,9 +1,13 @@
+<h2>Films Produced by <%= @production_company.name %></h2>
+
 <% for film in @films %>
 
 <h3 style="text-align:center;"> Title: <%= film.title %> </h3>
 <h3 style="text-align:center;"> Director: <%= film.director() %> </h3>
 <h3 style="text-align:center;"> Quantity: <%= film.quantity %> </h3>
 <h3 style="text-align:center;"> Purchase Cost: <%= film.purchase_cost %> </h3>
-<h3 style="text-align:center;"> Sell Price: <%= film.purchase_cost %> </h3>
-<h3 style="text-align:center;"> Purchase Cost: <%= film.purchase_cost %> </h3>
+<h3 style="text-align:center;"> Sell Price: <%= film.sell_price %> </h3>
+<h3 style="text-align:center;"> Film ID: <%= film.id %> </h3>
+<br>
+<hr>
 <% end %>

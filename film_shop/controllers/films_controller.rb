@@ -41,9 +41,3 @@ post '/films/:id/delete' do
   film.delete
   redirect to '/films'
 end
-
-get "/production-company/:id/students" do
-  @production_company = ProductionCompany.find(params["id"])
-  @films = ProductionCompany.find_film(@production_company.id)
-  erb(:show_films)
-end
