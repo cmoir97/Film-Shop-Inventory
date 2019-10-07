@@ -23,3 +23,8 @@ get '/production-company/:id' do
   @production_company = ProductionCompany.find(params['id'])
   erb(:"production_company/show")
 end
+
+get '/production-company/:id/edit' do
+  @production_company = ProductionCompany.find(params['id'])
+  erb(:"production_company/edit")
+end
