@@ -32,5 +32,11 @@ end
 post '/production-company/:id' do
   production_company = ProductionCompany.new(params)
   production_company.update
+  redirect to "/production-company/#{params['id']}"
+end
+
+post '/production-company/:id/delete' do
+  production_company = ProductionCompany.find(params['id'])
+  production_company.delete
   redirect to '/production-company'
 end

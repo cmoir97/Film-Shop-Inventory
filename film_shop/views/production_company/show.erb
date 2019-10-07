@@ -1,3 +1,6 @@
 <h2><%= @production_company.name %></h2>
 <br>
 <p>Production Company ID: <%= @production_company.id %></p>
+
+<form  action="/production-company/<%= @production_company.id %>/delete" method="post"><input type="submit" value="Delete Production Company">
+</form>
