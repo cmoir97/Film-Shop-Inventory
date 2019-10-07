@@ -95,4 +95,9 @@ class Film
     new_purchase_cost = @purchase_cost/10
     return "£#{new_purchase_cost}"
   end
+
+  def sell_price_converter()
+    new_sell_price = @sell_price/10
+    return "£#{new_sell_price}"
+  end
 end
