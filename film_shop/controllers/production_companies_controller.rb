@@ -18,3 +18,8 @@ post '/production-company' do
   ProductionCompany.new(params).save
   redirect to '/production-company'
 end
+
+get '/production-company/:id' do
+  @production_company = ProductionCompany.find(params['id'])
+  erb(:"production_company/show")
+end
