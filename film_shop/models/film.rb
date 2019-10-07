@@ -90,4 +90,9 @@ class Film
   markup = @sell_price - @purchase_cost
   return markup
   end
+
+  def purchase_cost_converter()
+    new_purchase_cost = @purchase_cost/10
+    return "£#{new_purchase_cost}"
+  end
 end
