@@ -28,3 +28,9 @@ get '/production-company/:id/edit' do
   @production_company = ProductionCompany.find(params['id'])
   erb(:"production_company/edit")
 end
+
+post '/production-company/:id' do
+  production_company = ProductionCompany.new(params)
+  production_company.update
+  redirect to '/production-company'
+end
