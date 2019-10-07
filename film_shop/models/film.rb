@@ -10,7 +10,7 @@ class Film
     @title = options['title']
     @director = options['director']
     @quantity = options['quantity'].to_i
-    @purchase_cost = options['purchase_cost']
+    @purchase_cost = options['purchase_cost'].to_i
     @sell_price = options['sell_price'].to_i
     @production_company_id = options['production_company_id'].to_i
   end
@@ -84,5 +84,10 @@ class Film
     return "out of stock" if @quantity == 0
     return "Stock Level OK" if @quantity > 2
     return "low stock" if @quantity <= 2
+  end
+
+  def markup()
+  markup = @sell_price - @purchase_cost
+  return markup
   end
 end
