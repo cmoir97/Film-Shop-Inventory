@@ -10,7 +10,7 @@
     <p>Purchase Cost: <%= film.purchase_cost_converter %></p>
     <p>Sell Price: <%= film.sell_price_converter %></p>
     <p>Production Company: <%= film.production_company.name %></p>
-    <p>Stock Level: <%= film.stock_check %></p>
+    <p class="<%= film.stock_check_css %>">Stock Level: <%= film.stock_check %></p>
     <p>Markup Amount: <%= film.markup %></p>
   </div>
   <br>

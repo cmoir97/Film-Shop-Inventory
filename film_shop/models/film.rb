@@ -81,9 +81,15 @@ class Film
   end
 
   def stock_check()
-    return "out of stock" if @quantity == 0
+    return "Out of Stock" if @quantity == 0
     return "Stock Level OK" if @quantity > 2
     return "low stock" if @quantity <= 2
+  end
+
+  def stock_check_css()
+    return "green" if @quantity > 2
+    return "orange" if @quantity <=2
+    return "red" if @quantity == 0
   end
 
   def markup()
