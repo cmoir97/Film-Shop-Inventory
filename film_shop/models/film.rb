@@ -80,4 +80,8 @@ class Film
   return film
   end
 
+  def stock_check()
+    return "low stock" if @quantity <= 2
+    return "out of stock" if @quantity == 0
+  end
 end

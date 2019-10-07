@@ -49,4 +49,11 @@ class ProductionCompany
     return production_company
   end
 
+  def self.find_film(id)
+    sql = "SELECT films.* FROM films WHERE production_company_id = $1"
+    values = [id]
+    result = SqlRunner.run( sql,values )
+    return result.map{ |film| Film.new(film)}
+  end
+
 end

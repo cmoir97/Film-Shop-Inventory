@@ -2,7 +2,7 @@
 
 <% for production_company in @production_companies %>
   <br>
-  <h3 style="text-align:center;"> Production Company Name: <%= production_company.name %> </h3>
+  <h3 style="text-align:center;"><a href="/production-company/<%= production_company.id %>"><%= production_company.name %> </a></h3>
   <br>
   <hr>
 <% end %>

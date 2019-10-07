@@ -1,5 +1,4 @@
-require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require_relative('../film_shop')
 require_relative( '../models/film' )
 require_relative( '../models/production_company')
 also_reload( '../models/*' )
@@ -41,4 +40,10 @@ post '/films/:id/delete' do
   film = Film.find(params['id'])
   film.delete
   redirect to '/films'
+end
+
+get "/production-company/:id/students" do
+  @production_company = ProductionCompany.find(params["id"])
+  @films = ProductionCompany.find_film(@production_company.id)
+  erb(:show_films)
 end
