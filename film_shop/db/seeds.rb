@@ -14,8 +14,11 @@ film1 = Film.new({'title' => 'There Will be Blood', 'director' => 'Paul Thomas A
 
 film2 = Film.new({'title' => 'Blue Velvet', 'director' => 'David Lynch', 'quantity' => 15, 'purchase_cost' => 300, 'sell_price' => 500, 'production_company_id' => production_company1.id()})
 
+film3 = Film.new({'title' => 'Once Upon A Time In America', 'director' => 'Sergio Leone', 'quantity' => 0, 'purchase_cost' => 300, 'sell_price' => 500, 'production_company_id' => production_company1.id()})
+
 film1.save()
 film2.save()
+film3.save()
 
 
 

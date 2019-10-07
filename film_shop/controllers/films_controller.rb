@@ -10,7 +10,8 @@ get '/films' do
 end
 
 get '/films/new' do
-  @films = Films.all
+  @production_companies = ProductionCompany.all
+  @films = Film.all
   erb(:"film/new")
 end
 

@@ -81,7 +81,8 @@ class Film
   end
 
   def stock_check()
-    return "low stock" if @quantity <= 2
     return "out of stock" if @quantity == 0
+    return "Stock Level OK" if @quantity > 2
+    return "low stock" if @quantity <= 2
   end
 end
