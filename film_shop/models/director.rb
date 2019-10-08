@@ -54,14 +54,12 @@ class Director
     return director
   end
 
-
-
-
-
-
-
-
-
+  def self.find_film_by_director(id)
+    sql = "SELECT films.* FROM films WHERE director_id = $1"
+    values = [id]
+    result = SqlRunner.run( sql,values )
+    return result.map{ |film| Film.new(film)}
+  end
 
 
 

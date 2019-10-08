@@ -9,4 +9,6 @@
 <p>Stock Level: <%= @film.stock_check %></p>
 <p>Markup Amount: <%= @film.markup %></p>
 
+<p><a href="/films/<%= @film.id %>/edit">Edit Film</a></p>
+
 <form action="/films/<%= @film.id %>/delete" method="POST"><input type="submit" value="Delete Film"></form>

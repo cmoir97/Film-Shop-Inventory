@@ -3,25 +3,36 @@
 <head>
   <title>Film Shop</title>
   <link rel="stylesheet" type="text/css" href="/styles/colour.css">
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
 </head>
-<body style="text-align:center;">
+<body style="text-align:center;" class="wholepage">
   <nav>
-    <%= yield %>
-    <br>
-    <br>
-    <hr>
-    <ul style="list-style: none;">
-      <li>
-        <h3><a href="/">Home</a></h3>
+    <ul class="header_list">
+      <li class="header_items">
+        <h3><a class="header_links" href="/">Home</a></h3>
       </li>
-      <li>
-        <h3><a href="/films">Films</a></h3>
+      <li class="header_items">
+        <h3><a class="header_links" href="/films">Films</a></h3>
       </li>
-      <li>
-        <h3><a href="/production-company">Production Companies</a></h3>
+      <li class="header_items">
+        <h3><a class="header_links" href="/production-company">Production Companies</a></h3>
+      </li>
+      <li class="header_items">
+        <h3><a class="header_links" href="/directors">Directors</a></h3>
+      </li>
+      <li class="header_items">
+        <h3><a class="header_links" href="/films/new">Add New Film</a></h3>
+      </li>
+      <li class="header_items">
+        <h3><a class="header_links" href="/production-company/new">Add New Production Company</a></h3>
+        </li>
+        <li class="header_items">
+          <h3><a class="header_links" href="/directors/new">Add New Director</a></h3>
       </li>
     </ul>
   </nav>
-
+  <br>
+  <br>
+<%= yield %>
 </body>
 </html>

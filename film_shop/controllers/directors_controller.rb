@@ -2,7 +2,6 @@ require_relative('../film_shop')
 require_relative( '../models/film' )
 require_relative( '../models/production_company')
 require_relative( '../models/director')
-also_reload( '../models/*' )
 
 get '/directors' do
   @directors = Director.all()
@@ -39,4 +38,10 @@ post '/directors/:id/delete' do
   director = Director.find(params['id'])
   director.delete
   redirect to '/directors'
+end
+
+get '/directors/:id/films' do
+  @director = Director.find(params['id'])
+  @films = Director.find_film_by_director(@director.id)
+  erb(:"director/find_film")
 end

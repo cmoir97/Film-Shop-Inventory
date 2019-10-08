@@ -1,0 +1,46 @@
+.header_list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: rgb(98, 150, 112);
+  position: fixed;
+  border: 1px rgb(210, 210, 210);
+}
+
+.header_items{
+
+  list-style-type: none;
+  border-right: 1px solid rgb(210, 210, 210);
+  border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+.wholepage{
+background-color: rgb(98, 150, 112);
+}
+
+.header_links{
+display: block;
+padding: 10px;
+text-decoration: none;
+color: rgb(210, 210, 210);
+}
+
+hr {
+  width: 50% ;
+}
+
+a {
+  color: white;
+  text-decoration: none
+}
+
+form {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 20px
+}
+
+input {
+  font-size: 15px;
+}
