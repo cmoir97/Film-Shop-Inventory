@@ -11,7 +11,7 @@ CREATE TABLE production_companies
 CREATE TABLE directors
 (
   id SERIAL8 primary key,
-  name VARCHAR(255),
+  name VARCHAR(255)
 );
 
 CREATE TABLE films
