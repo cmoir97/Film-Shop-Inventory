@@ -33,6 +33,13 @@ class ProductionCompany
     SqlRunner.run(sql, values)
   end
 
+  def directors()
+  sql = "SELECT d.* FROM directors d INNER JOIN films f ON f.director_id = d.id WHERE f.production_company_id = $1;"
+  values = [@id]
+  results = SqlRunner.run(sql, values)
+  return results.map { |directors| Director.new(directors) }
+  end
+
   def self.all()
     sql = "SELECT * FROM production_companies"
     hashes_of_companies = SqlRunner.run(sql)
