@@ -8,3 +8,13 @@ get '/directors' do
   @directors = Director.all()
   erb (:"director/index")
 end
+
+get '/directors/new' do
+  @directors = Director.all
+  erb(:"director/new")
+end
+
+post '/directors' do
+  Director.new(params).save
+  redirect to '/directors'
+end
