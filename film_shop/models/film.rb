@@ -88,22 +88,22 @@ class Film
 
   def stock_check_css()
     return "green" if @quantity > 2
-    return "orange" if @quantity <=2
     return "red" if @quantity == 0
+    return "orange" if @quantity <=2
   end
 
   def markup()
-  markup = (@sell_price - @purchase_cost)/10
+  markup = (@sell_price - @purchase_cost)/100
   return "£#{markup}"
   end
 
   def purchase_cost_converter()
-    new_purchase_cost = @purchase_cost/10
+    new_purchase_cost = @purchase_cost/100
     return "£#{new_purchase_cost}"
   end
 
   def sell_price_converter()
-    new_sell_price = @sell_price/10
+    new_sell_price = @sell_price/100
     return "£#{new_sell_price}"
   end
 
