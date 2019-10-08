@@ -23,3 +23,14 @@ get '/directors/:id' do
   @director = Director.find(params['id'])
   erb(:"director/show")
 end
+
+get '/directors/:id/edit' do
+  @director = Director.find(params['id'])
+  erb(:"director/edit")
+end
+
+post '/directors/:id' do
+  director = Director.new(params)
+  director.update
+  redirect to "/directors/#{params['id']}"
+end
