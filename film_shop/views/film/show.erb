@@ -1,9 +1,9 @@
 <h2><%= @film.title %></h2>
 <br>
-<p>Director: <%= @film.director %></p>
 <p>Quantity: <%= @film.quantity %></p>
-<p>Purchase Cost: <%= @film.purchase_cost %></p>
-<p>Sell Price: <%= @film.sell_price %></p>
+<p>Purchase Cost: <%= @film.purchase_cost_converter %></p>
+<p>Sell Price: <%= @film.sell_price_converter %></p>
+<p>Director: <%= @film.director.name %></p>
 <p>Production Company: <%= @film.production_company.name %></p>
 <p>Film ID: <%= @film.id %></p>
 <p>Stock Level: <%= @film.stock_check %></p>

@@ -1,8 +1,8 @@
-<h2 style="text-align:center;">Production Companies</h2>
+<h2>Production Companies</h2>
 
 <% for production_company in @production_companies %>
   <br>
-  <h3 style="text-align:center;"><a href="/production-company/<%= production_company.id %>"><%= production_company.name %> </a></h3>
+  <h3><a href="/production-company/<%= production_company.id %>"><%= production_company.name %> </a></h3>
   <br>
   <hr>
 <% end %>

@@ -1,6 +1,7 @@
 require_relative('../film_shop')
 require_relative( '../models/film' )
 require_relative( '../models/production_company')
+require_relative( '../models/director')
 also_reload( '../models/*' )
 
 
@@ -10,6 +11,7 @@ get '/films' do
 end
 
 get '/films/new' do
+  @directors = Director.all
   @production_companies = ProductionCompany.all
   @films = Film.all
   erb(:"film/new")
@@ -26,6 +28,7 @@ get '/films/:id' do
 end
 
 get '/films/:id/edit' do
+  @directors = Director.all
   @production_companies = ProductionCompany.all
   @film = Film.find(params['id'])
   erb(:"film/edit")

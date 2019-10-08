@@ -1,0 +1,8 @@
+<h2>Directors</h2>
+
+<% for director in @directors %>
+  <br>
+  <h3><a href="/production-company/<%= director.id %>"><%= director.name %> </a></h3>
+  <br>
+  <hr>
+<% end %>
