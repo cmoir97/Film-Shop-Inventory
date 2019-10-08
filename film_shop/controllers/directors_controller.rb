@@ -34,3 +34,9 @@ post '/directors/:id' do
   director.update
   redirect to "/directors/#{params['id']}"
 end
+
+post '/directors/:id/delete' do
+  director = Director.find(params['id'])
+  director.delete
+  redirect to '/directors'
+end
