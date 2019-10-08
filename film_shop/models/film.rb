@@ -64,6 +64,14 @@ class Film
   return ProductionCompany.new( results.first )
   end
 
+  def director()
+  sql = "SELECT * FROM directors
+  WHERE id = $1"
+  values = [@director_id]
+  results = SqlRunner.run( sql, values )
+  return Director.new( results.first )
+  end
+
   def self.all()
     sql = "SELECT * FROM films"
     hashes_of_films = SqlRunner.run(sql)

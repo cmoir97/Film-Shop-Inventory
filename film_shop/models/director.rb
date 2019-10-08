@@ -30,6 +30,7 @@ class Director
     SqlRunner.run(sql, values)
   end
 
+
   def self.all()
     sql = "SELECT * FROM directors"
     hashes_of_directors = SqlRunner.run(sql)

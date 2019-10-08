@@ -21,7 +21,7 @@ production_company2.save()
 
 film1 = Film.new({'title' => 'There Will be Blood', 'director' => 'Paul Thomas Anderson', 'quantity' => 10, 'purchase_cost' => 700, 'sell_price' => 1000, 'director_id' => director1.id(), 'production_company_id' => production_company1.id()})
 
-film2 = Film.new({'title' => 'Blue Velvet', 'quantity' => 15, 'purchase_cost' => 300, 'sell_price' => 500, 'director_id' => director2.id(), 'production_company_id' => production_company1.id()})
+film2 = Film.new({'title' => 'Blue Velvet', 'quantity' => 15, 'purchase_cost' => 300, 'sell_price' => 500, 'director_id' => director1.id(), 'production_company_id' => production_company1.id()})
 
 film3 = Film.new({'title' => 'Once Upon A Time In America', 'quantity' => 0, 'purchase_cost' => 300, 'sell_price' => 500, 'director_id' => director3.id(), 'production_company_id' => production_company1.id()})
 
