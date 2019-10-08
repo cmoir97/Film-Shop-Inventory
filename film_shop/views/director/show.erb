@@ -1,0 +1,8 @@
+<h2><%= @director.name %></h2>
+<br>
+<p>Director ID: <%= @director.id %></p>
+
+<p><a href="/directors/<%= @director.id %>/films">View Films By This Director</a></p>
+
+<form  action="/directors/<%= @director.id %>/delete" method="post"><input type="submit" value="Delete Director">
+</form>

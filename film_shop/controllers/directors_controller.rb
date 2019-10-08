@@ -18,3 +18,8 @@ post '/directors' do
   Director.new(params).save
   redirect to '/directors'
 end
+
+get '/directors/:id' do
+  @director = Director.find(params['id'])
+  erb(:"director/show")
+end
