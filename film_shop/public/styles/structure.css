@@ -32,6 +32,22 @@ color: rgb(200, 200, 200);
   color: white;
 }
 
+.welcome {
+  font-size: 45px;
+}
+
+.green {
+  color: rgb(220, 240, 220);
+}
+
+.red {
+  color: red;
+}
+
+.orange{
+  color: orange;
+}
+
 hr {
   width: 50% ;
 }
@@ -55,10 +71,12 @@ body {
   background: url('/images/background.jpg');
   background-repeat: no-repeat;
   background-size:cover;
+  background-attachment: fixed;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
 }
 
 input {
   border-radius: 10px;
+  border: 1px black;
 }
