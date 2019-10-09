@@ -6,9 +6,10 @@
 <p>Director: <%= @film.director.name %></p>
 <p>Production Company: <%= @film.production_company.name %></p>
 <p>Film ID: <%= @film.id %></p>
-<p>Stock Level: <%= @film.stock_check %></p>
+<p class="stock_check">Stock Level: <%= @film.stock_check %></p>
 <p>Markup Amount: <%= @film.markup %></p>
 
 <p><a href="/films/<%= @film.id %>/edit">Edit Film</a></p>
+<p><a href="/films">Return to Films</a></p>
 
 <form action="/films/<%= @film.id %>/delete" method="POST"><input type="submit" value="Delete Film"></form>

@@ -1,8 +1,21 @@
 <h2><%= @production_company.name %></h2>
 <br>
-<p>Production Company ID: <%= @production_company.id %></p>
+<h3>Production Company ID: <%= @production_company.id %></p>
+<hr>
+<br>
+<h2>Films Produced by <%= @production_company.name %></h2>
+<br>
+<% for film in @films %>
 
-<p><a href="/production-company/<%= @production_company.id %>/films">View Films By This Company</a></p>
+<h3> Title: <%= film.title %> </h3>
+<h3> Director: <%= film.director.name %> </h3>
+<h3> Quantity: <%= film.quantity %> </h3>
+<h3> Purchase Cost: <%= film.purchase_cost_converter %> </h3>
+<h3> Sell Price: <%= film.sell_price_converter %> </h3>
+<h3> Film ID: <%= film.id %> </h3>
+<br>
+<hr>
+<% end %>
 
 <form  action="/production-company/<%= @production_company.id %>/delete" method="post"><input type="submit" value="Delete Production Company">
 </form>

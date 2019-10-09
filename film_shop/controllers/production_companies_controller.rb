@@ -19,6 +19,7 @@ end
 
 get '/production-company/:id' do
   @production_company = ProductionCompany.find(params['id'])
+  @films = ProductionCompany.find_film(@production_company.id)
   erb(:"production_company/show")
 end
 
@@ -37,10 +38,4 @@ post '/production-company/:id/delete' do
   production_company = ProductionCompany.find(params['id'])
   production_company.delete
   redirect to '/production-company'
-end
-
-get "/production-company/:id/films" do
-  @production_company = ProductionCompany.find(params["id"])
-  @films = ProductionCompany.find_film(@production_company.id)
-  erb(:"production_company/show_films")
 end

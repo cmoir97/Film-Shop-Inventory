@@ -20,6 +20,7 @@ end
 
 get '/directors/:id' do
   @director = Director.find(params['id'])
+  @films = Director.find_film_by_director(@director.id)
   erb(:"director/show")
 end
 
@@ -38,10 +39,4 @@ post '/directors/:id/delete' do
   director = Director.find(params['id'])
   director.delete
   redirect to '/directors'
-end
-
-get '/directors/:id/films' do
-  @director = Director.find(params['id'])
-  @films = Director.find_film_by_director(@director.id)
-  erb(:"director/find_film")
 end

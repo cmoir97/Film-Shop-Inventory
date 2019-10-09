@@ -2,7 +2,19 @@
 <br>
 <p>Director ID: <%= @director.id %></p>
 
-<p><a href="/directors/<%= @director.id %>/films">View Films By This Director</a></p>
+<br>
+<br>
+<% for film in @films %>
+
+<h3> Title: <%= film.title %> </h3>
+<h3> Director: <%= film.director.name %> </h3>
+<h3> Quantity: <%= film.quantity %> </h3>
+<h3> Purchase Cost: <%= film.purchase_cost %> </h3>
+<h3> Sell Price: <%= film.sell_price %> </h3>
+<h3> Film ID: <%= film.id %> </h3>
+<br>
+<hr>
+<% end %>
 
 <form  action="/directors/<%= @director.id %>/delete" method="post"><input type="submit" value="Delete Director">
 </form>
