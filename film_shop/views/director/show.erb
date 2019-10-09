@@ -1,17 +1,20 @@
-<h2><%= @director.name %></h2>
+<h1><%= @director.name %></h1>
 <br>
-<p>Director ID: <%= @director.id %></p>
-
+<h3>Director ID: <%= @director.id %></h3>
+<hr>
 <br>
+<h2>Films Directed by <%= @director.name %></h2>
+<hr>
 <br>
 <% for film in @films %>
 
 <h3> Title: <%= film.title %> </h3>
 <h3> Director: <%= film.director.name %> </h3>
 <h3> Quantity: <%= film.quantity %> </h3>
-<h3> Purchase Cost: <%= film.purchase_cost %> </h3>
-<h3> Sell Price: <%= film.sell_price %> </h3>
+<h3> Purchase Cost: <%= film.purchase_cost_converter %> </h3>
+<h3> Sell Price: <%= film.sell_price_converter %> </h3>
 <h3> Film ID: <%= film.id %> </h3>
+<h3>Markup Amount: <%= film.markup %></h3>
 <br>
 <hr>
 <% end %>

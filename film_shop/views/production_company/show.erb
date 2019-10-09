@@ -1,9 +1,10 @@
-<h2><%= @production_company.name %></h2>
+<h1><%= @production_company.name %></h1>
 <br>
-<h3>Production Company ID: <%= @production_company.id %></p>
+<h3>Production Company ID: <%= @production_company.id %></h3>
 <hr>
 <br>
 <h2>Films Produced by <%= @production_company.name %></h2>
+<hr>
 <br>
 <% for film in @films %>
 
@@ -13,6 +14,7 @@
 <h3> Purchase Cost: <%= film.purchase_cost_converter %> </h3>
 <h3> Sell Price: <%= film.sell_price_converter %> </h3>
 <h3> Film ID: <%= film.id %> </h3>
+<h3>Markup Amount: <%= film.markup %></h3>
 <br>
 <hr>
 <% end %>
