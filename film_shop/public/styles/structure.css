@@ -2,9 +2,8 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: block;
-  background-color: rgb(98, 150, 112);
-  position: fixed;
+  background-color: rgb(220, 240, 220);
+  position: absolute;
   border: 1px rgb(210, 210, 210);
 }
 
@@ -12,7 +11,9 @@
 
   list-style-type: none;
   border-right: 1px solid rgb(210, 210, 210);
-  border-bottom: 1px solid rgb(210, 210, 210);
+  float: left;
+  display: block;
+  padding: 2px 23px;
 }
 
 .wholepage{
@@ -21,9 +22,14 @@ background-color: rgb(98, 150, 112);
 
 .header_links{
 display: block;
-padding: 10px;
+padding: 5px;
 text-decoration: none;
-color: rgb(210, 210, 210);
+color: rgb(200, 200, 200);
+}
+
+.header_items, .header_links:hover {
+  background-color: rgb(60, 60, 60);
+  color: white;
 }
 
 hr {

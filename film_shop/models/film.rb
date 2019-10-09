@@ -102,17 +102,17 @@ class Film
 
   def markup()
   markup = (@sell_price - @purchase_cost)/100.0
-  return "£#{markup}"
+  return "£#{markup}0"
   end
 
   def purchase_cost_converter()
     new_purchase_cost = @purchase_cost/100.0
-    return "£#{new_purchase_cost}"
+    return "£#{new_purchase_cost}0"
   end
 
   def sell_price_converter()
     new_sell_price = @sell_price/100.0
-    return "£#{new_sell_price}"
+    return "£#{new_sell_price}0"
   end
 
 end
